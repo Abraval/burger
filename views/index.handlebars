@@ -1,0 +1,62 @@
+<section class="preloader">
+  <div class="spinner">
+    <span class="spinner-rotate"></span>
+  </div>
+</section>
+<section id="home">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class="home-info">
+          <h1>Make a Burger! <br />Eat a burger!</h1>
+
+          <div class="create-burger">
+            <form class="create-form">
+              <input type="text" name="burger" id="newburger" class="form-control" placeholder="Burger name"
+                required="" />
+              <button type="submit" class="form-control" id="addburger">
+                <i class="fa fa-smile-o"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-6">
+      <div class="card border-0 rounded shadow my-5 px-5 py-5">
+        <div class="card-title text-center font-weight-bold" id="lefthead">New Burgers</div>
+        <ul class="mt-5">
+          {{#each burgers}}
+          {{#unless devoured}}
+          <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+          <button type="button" class="eatburger btn btn-warning float-right" id="eatbutton" data-id="{{this.id}}"
+            data-newDevoured="{{devour}}"><span class="fa fa-cutlery"></span></button>
+          <hr>
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-6">
+      <div class="card border-0 rounded shadow my-5 px-5 py-5">
+        <div class="card-title text-center font-weight-bold" id="righthead">Devoured Burgers</div>
+        <ul class="mt-5">
+          {{#each burgers}}
+          {{#if devoured}}
+          <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+          <button type="button" class="trashburger btn btn-danger float-right" id="trashbutton" data-id="{{this.id}}"
+            data-newDevoured="{{devour}}"><span class="fa fa-trash"></span></button>
+          <hr>
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
