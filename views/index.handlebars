@@ -9,7 +9,9 @@
     <div class="row">
       <div class="col-md-12 col-sm-12">
         <div class="home-info">
+          <br><br>
           <h1>Make a Burger! <br />Eat a burger!</h1>
+          <br><br><br><br>
 
           <div class="create-burger">
             <form class="create-form">
@@ -30,13 +32,13 @@
   <div class="row">
     <div class="col-md-6 col-sm-6">
       <div class="card border-0 rounded shadow my-5 px-5 py-5">
-        <div class="card-title text-center font-weight-bold" id="lefthead">New Burgers</div>
+        <div class="card-title text-center font-weight-bold" id="lefthead">Just Added!</div>
         <ul class="mt-5">
           {{#each burgers}}
           {{#unless devoured}}
           <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
-          <button type="button" class="eatburger btn btn-warning float-right" id="eatbutton" data-id="{{this.id}}"
-            data-newDevoured="{{devour}}"><span class="fa fa-cutlery"></span></button>
+          <button type="button" class="eatburger btn btn-success float-right text-weight-bold" id="eatbutton" data-id="{{this.id}}"
+            data-newDevoured="{{devour}}">Eat Me!<i class="fas fa-cookie-bite mx-1"></i></button>
           <hr>
           {{/unless}}
           {{/each}}
@@ -45,13 +47,13 @@
     </div>
     <div class="col-md-6 col-sm-6">
       <div class="card border-0 rounded shadow my-5 px-5 py-5">
-        <div class="card-title text-center font-weight-bold" id="righthead">Devoured Burgers</div>
+        <div class="card-title text-center font-weight-bold" id="righthead">All Gone!</div>
         <ul class="mt-5">
           {{#each burgers}}
           {{#if devoured}}
           <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
           <button type="button" class="trashburger btn btn-danger float-right" id="trashbutton" data-id="{{this.id}}"
-            data-newDevoured="{{devour}}"><span class="fa fa-trash"></span></button>
+            data-newDevoured="{{devour}}"><span class="fas fa-trash-alt"></span></button>
           <hr>
           {{/if}}
           {{/each}}
