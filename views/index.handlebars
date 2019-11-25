@@ -37,8 +37,9 @@
           {{#each burgers}}
           {{#unless devoured}}
           <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
-          <button type="button" class="eatburger btn btn-success float-right text-weight-bold" id="eatbutton" data-id="{{this.id}}"
-            data-newDevoured="{{devour}}">Eat Me!<i class="fas fa-cookie-bite mx-1"></i></button>
+          <button type="button" class="eatburger btn btn-success border-0 rounded shadow float-right text-weight-bold"
+            id="eatbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}">Eat Me!<i
+              class="fas fa-cookie-bite mx-1"></i></button>
           <hr>
           {{/unless}}
           {{/each}}
@@ -52,8 +53,8 @@
           {{#each burgers}}
           {{#if devoured}}
           <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
-          <button type="button" class="trashburger btn btn-danger float-right" id="trashbutton" data-id="{{this.id}}"
-            data-newDevoured="{{devour}}"><span class="fas fa-trash-alt"></span></button>
+          <button type="button" class="trashburger btn btn-danger border-0 rounded shadow float-right" id="trashbutton"
+            data-id="{{this.id}}" data-newDevoured="{{devour}}"><span class="fas fa-trash-alt"></span></button>
           <hr>
           {{/if}}
           {{/each}}
