@@ -53,8 +53,13 @@
           {{#each burgers}}
           {{#if devoured}}
           <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+
+          <button type="button" class="mx-2 reoder btn btn-warning border-0 rounded shadow float-right" id="reoder"
+            data-id="{{this.id}}" data-burger="{{this.burger_name}}" data-newDevoured="{{devour}}">Reorder<span class="fas fa-hamburger mx-1"></span></button>
+            
           <button type="button" class="trashburger btn btn-danger border-0 rounded shadow float-right" id="trashbutton"
             data-id="{{this.id}}" data-newDevoured="{{devour}}"><span class="fas fa-trash-alt"></span></button>
+
           <hr>
           {{/if}}
           {{/each}}
