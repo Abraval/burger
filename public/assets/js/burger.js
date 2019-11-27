@@ -49,19 +49,19 @@ $(function() {
 
   $(".reoder").on("click", function(event) {
     event.preventDefault();
-    console.log($(this).data("burger"));
 
-    var newBurger = {
-      burger_name: $(this).data("burger"),
+    console.log("this works!");
+
+    var id = $(this).data("id");
+    var devouredState = {
       devoured: 0
     };
 
-    $.ajax("/api/burgers", {
-      type: "POST",
-      data: newBurger
+    $.ajax("/api/burgers/" + id, {
+      type: "PUT",
+      data: devouredState
     }).then(function() {
-      console.log("Added new burger");
-
+      console.log("Burger devoured");
       location.reload();
     });
   });
